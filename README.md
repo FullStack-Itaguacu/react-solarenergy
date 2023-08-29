@@ -1,4 +1,4 @@
-# Solar Energy
+# Solar Energy.
 
 ## Será desenvolvido em qual linguagem? 
 * JavaScript
