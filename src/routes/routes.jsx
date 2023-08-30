@@ -1,6 +1,4 @@
-import { Outlet, Routes, Route, BrowserRouter } from "react-router-dom";
-
-import React from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Login } from "../pages/login/Login";
 import { Dashboard } from "../pages/dashboard/Dashboard";
 import { UnidadeGeradora } from "../pages/unidade-geradora/UnidadeGeradora";
