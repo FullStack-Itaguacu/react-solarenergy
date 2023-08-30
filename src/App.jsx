@@ -3,7 +3,6 @@ import './App.css'
 import AppRotas from './routes/routes'
 
 function App() {
- 
 
   return (
     <>
