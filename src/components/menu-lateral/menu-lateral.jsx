@@ -37,7 +37,7 @@ export const MenuLateral = () => {
           <Link to="/lancamento-mensal">
             <div className={`${styles.menuItem} ${pathname === "/lancamento-mensal" ? styles.active : ""}`} >
               <img className={styles.icon} alt="Icone" src={pathname === '/lancamento-mensal' ? iconeCadastroBranco : iconeCadastroCinza} />
-              <div className={`${styles.text} ${pathname === "/lancamento-mensal" ? styles.active : ""}`}>Cadastro de energia grada</div>
+              <div className={`${styles.text} ${pathname === "/lancamento-mensal" ? styles.active : ""}`}>Cadastro de energia gerada</div>
             </div>
           </Link>
         </div>
