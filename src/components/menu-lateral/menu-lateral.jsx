@@ -11,11 +11,11 @@ export const MenuLateral = () => {
   return (
     <div className="box">
       <div className="side-menu">
-        <img className="logo" alt="Logo" src="src\assets\menu-lateral\logo-menu-bg-branco.png" />
+        <img className="logo" alt="Logo" src="src\components\menu-lateral\imagens\logo-menu-bg-branco.png" />
         <div className="list">
           <div className={`dashboard menu-item ${activeItem === "dashboard" ? "active" : ""}`} 
             onClick={() => handleItemClick("dashboard")}>
-            <img className="icone" alt="Icone" src={`src\components\menu-lateral\imagens\icon-dashboard-${activeItem === "dashboard" ? "branco" : "cinza"}.png`}/>
+            <img className="icone" alt="Icone" src={`src\components\menu-lateral\imagens\icone-dashboard-${activeItem === "dashboard" ? "branco" : "cinza"}.png`}/>
             <div className={`text ${activeItem === "dashboard" ? "active" : ""}`}>Dashboard</div>
           </div>
           <div className={`unidade-geradora menu-item ${activeItem === "unidade-geradora" ? "active" : ""}`} onClick={() => handleItemClick("unidade-geradora")}>
