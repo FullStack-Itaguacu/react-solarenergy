@@ -1,0 +1,56 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+
+export default function Login() {
+  return (
+    <div className="container d-flex justify-content-center align-items-center min-vh-100">
+      <div className="row border rounded-5 p-3 bg-white shadow box-area">
+        <div className="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
+          <div className="featured-img">
+            <img
+              id="featured-img"
+              src="src/img/ImagemBGLogin.png"
+              className="img-fluid"
+              width="455px"
+              alt="featured"
+            />
+          </div>
+        </div>
+
+        <div className="col-md-6 right-box">
+          <div className="row align-items-center">
+            <div className="col-md-12 d-flex justify-content-center align-items-center logo">
+              <img
+                src="src/img/Logo.png"
+                width="250px"
+                alt="logo solar energy"
+              />
+            </div>
+            <div className="header-text mb-4 text-center">
+              <p>Seja bem vindo</p>
+            </div>
+            <div className="input-container">
+              <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
+              <input
+              id="input"
+                type="text"
+                className="form-control form-control-lg bg-light fs-6"
+                placeholder="E-mail"
+              />
+            </div>
+            <div className="input-group mb-3">
+              <input
+                type="text"
+                className="form-control form-control-lg bg-light fs-6"
+                placeholder="Senha"
+              />
+            </div>
+            <div className="d-grid gap-2 col-4 mt-2 mx-auto" id="btn">
+              <input id="btn" className="btn" value="Enviar" type="submit" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
