@@ -1,7 +1,10 @@
-import React from 'react'
+import { MenuLateral } from '../../components/menu-lateral/menu-lateral'
 
 export const LancamentoMensal = () => {
   return (
-    <div>LancamentoMensal</div>
+    <dir>
+      <MenuLateral />
+      <div>LancamentoMensal</div>
+    </dir>
   )
 }

@@ -67,6 +67,7 @@
   font-weight: 500;
   letter-spacing: 0;
   line-height: normal;
+  justify-items: center;
   position: relative;
   width: fit-content;
 }
