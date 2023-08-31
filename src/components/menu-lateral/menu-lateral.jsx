@@ -1,32 +1,45 @@
-import { useState } from "react";
-import "./menu-lateral.css";
+import styles from "./menu-lateral.module.css";
+import { Link, useLocation } from 'react-router-dom';
+import iconeCadastroBranco from "./imagens/icone-cadastrar-branco.png";
+import iconeDashboardBranco from "./imagens/icone-dashboard-branco.png";
+import iconeUnidadesBranco from "./imagens/icone-unidades-branco.png";
+import iconeCadastroCinza from "./imagens/icone-cadastrar-cinza.png";
+import iconeDashboardCinza from "./imagens/icone-dashboard-cinza.png";
+import iconeUnidadesCinza from "./imagens/icone-unidades-cinza.png";
+
+
+
 
 export const MenuLateral = () => {
-  const [activeItem, setActiveItem] = useState(null);
-  const handleItemClick = (item) => {
-    setActiveItem(item);
-  };
+  const location = useLocation();
+  const { pathname } = location;
+
 
   return (
-    <div className="box">
-      <div className="side-menu">
-        <img className="logo" alt="Logo" src="src/components/menu-lateral/imagens/logo-menu-bg-branco.png" />
-        <div className="list">
-            <div className={`dashboard menu-item ${activeItem === "dashboard" ? "active" : ""}`} 
-              onClick={() => handleItemClick("dashboard")}>
-              <img className="icone" alt="Icone" src={`src/components/menu-lateral/imagens/icone-dashboard-${activeItem === "dashboard" ? "branco" : "cinza"}.png`}/>
-              <div className={`text ${activeItem === "dashboard" ? "active" : ""}`}>Dashboard</div>
+    <div className={styles.box}>
+      <div className={styles.sideMenu}>
+        <img className={styles.logo} alt="Logo" src="src\components\menu-lateral\imagens\logo-menu-bg-branco.png" />
+        <div className={styles.list}>
+          <Link to="/dashboard">
+            <div
+              className={`${styles.menuItem} ${pathname === '/dashboard' ? styles.active : ""}`}>
+              <img className={styles.icon} alt="Icone" src={pathname === '/dashboard' ? iconeDashboardBranco : iconeDashboardCinza} />
+              <div className={`${styles.text} ${pathname === '/dashboard' ? styles.active : ""}`}>Dashboard</div>
             </div>
-            <div className={`unidade-geradora menu-item ${activeItem === "unidade-geradora" ? "active" : ""}`}
-              onClick={() => handleItemClick("unidade-geradora")}>
-              <img className="icone" alt="Icone" src={`src/components/menu-lateral/imagens/icone-cadastrar-${activeItem === "unidade-geradora" ? "branco" : "cinza"}.png`} />
-              <div className={`text ${activeItem === "unidade-geradora" ? "active" : ""}`}>Unidades</div>
+          </Link >
+          <Link to="/unidade-geradora">
+            <div
+              className={`${styles.menuItem} ${pathname === "/unidade-geradora" ? styles.active : ""}`}>
+              <img className={styles.icon} alt="Icone" src={pathname === '/unidade-geradora' ? iconeUnidadesBranco : iconeUnidadesCinza} />
+              <div className={`${styles.text} ${pathname === "/unidade-geradora" ? styles.active : ""}`}>Unidades</div>
             </div>
-            <div className={`lancamento-mensal menu-item ${activeItem === "lancamento-mensal" ? "active" : ""}`}
-              onClick={() => handleItemClick("lancamento-mensal")}>
-              <img className="icone" alt="Icone" src={`src/components/menu-lateral/imagens/icone-unidades-${activeItem === "lancamento-mensal" ? "branco" : "cinza"}.png`} />
-              <div className={`text ${activeItem === "lancamento-mensal" ? "active" : ""}`}>Cadastro de energia grada</div>
+          </Link>
+          <Link to="/lancamento-mensal">
+            <div className={`${styles.menuItem} ${pathname === "/lancamento-mensal" ? styles.active : ""}`} >
+              <img className={styles.icon} alt="Icone" src={pathname === '/lancamento-mensal' ? iconeCadastroBranco : iconeCadastroCinza} />
+              <div className={`${styles.text} ${pathname === "/lancamento-mensal" ? styles.active : ""}`}>Cadastro de energia grada</div>
             </div>
+          </Link>
         </div>
       </div>
     </div>
