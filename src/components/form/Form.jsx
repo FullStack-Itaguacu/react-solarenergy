@@ -1,9 +1,16 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit();
+
+    const formData = {}; // foi criado um objeto para armazenar os dados do formulário
+
+    fields.forEach((field) => {
+      formData[field.name] = event.target[field.name].value; // Preenche o objeto com os valores digitados do formulário
+    });
+
+    onSubmit(formData); // para chamar a função onSubmit com o objeto de dados do formulário
   };
 
   return (
@@ -11,7 +18,7 @@ export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
       {fields.map((field, index) => (
         <div key={index} className={field.className}>
           <label htmlFor={field.name}>{field.label}</label>
-          {field.icon && <i className={`icon-${field.icon}`} />}{' '}
+          {field.icon && <i className={`icon-${field.icon}`} />}{" "}
           <input
             type={field.type}
             id={field.name}
@@ -20,7 +27,7 @@ export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
           />
           {field.showCheckbox && (
             <label>
-              <input type="checkbox" name={`${field.name}_checkbox`} />{' '}
+              <input type="checkbox" name={`${field.name}_checkbox`} />{" "}
               {field.checkboxLabel}
             </label>
           )}
