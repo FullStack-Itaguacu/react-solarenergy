@@ -11,9 +11,9 @@ export default function AppRotas() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/unidade-geradora" element={<UnidadeGeradora />}/>
-        <Route path="/lancamento-mensal" element={<LancamentoMensal />}/>
-        <Route path= "*" element={<Error/>}/>
+        <Route path="/unidade-geradora" element={<UnidadeGeradora />} />
+        <Route path="/lancamento-mensal" element={<LancamentoMensal />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );
