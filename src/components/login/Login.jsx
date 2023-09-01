@@ -4,7 +4,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 export default function Login() {
   return (
     <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="row border rounded-5 p-3 bg-white shadow box-area">
+      <div className="row box-area">
         <div className="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
           <div className="featured-img">
             <img
@@ -46,7 +46,7 @@ export default function Login() {
               />
             </div>
             <div className="d-grid gap-2 col-4 mt-2 mx-auto" id="btn">
-              <input id="btn" className="btn" value="Enviar" type="submit" />
+              <input id="btn" className="btn" value="Entrar" type="submit" />
             </div>
           </div>
         </div>

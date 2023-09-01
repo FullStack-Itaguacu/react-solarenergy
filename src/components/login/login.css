@@ -7,11 +7,6 @@
   font-family: 'Roboto Slab', serif;
 }
 
-#featured-img {
-  border-radius: 5px;
-}
-
-
 p {
   color: #374557;
   font-weight: 100;
@@ -49,7 +44,7 @@ p {
 }
 
 #btn input {
-  border-radius: 30px;
+  border-radius: 4px;
   font-size: 1.1rem;
   color: #FAFAFA;
   background-color: #4CBC9A;
