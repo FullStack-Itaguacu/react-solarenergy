@@ -1,8 +1,12 @@
-import React from 'react'
+import ListaUnidades from "../../components/listaUnidades/listaUnidades";
 
 export const UnidadeGeradora = () => {
   return (
-    <div>UnidadeGeradora</div>
-  )
-}
+    <div>
+      <h3>Lista de Unidades</h3>
+      <ListaUnidades />
+
+    </div>
+  ) 
+};
 
