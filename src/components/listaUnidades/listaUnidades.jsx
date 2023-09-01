@@ -50,9 +50,7 @@ export default function ListaUnidades() {
         </tbody>
       </Table>
       <br />
-      <Button onClick={() => adicionaUnidade()}>
-        Nova Unidade
-      </Button>
+      <Button onClick={() => adicionaUnidade()}>Nova Unidade</Button>
     </div>
   );
 };
