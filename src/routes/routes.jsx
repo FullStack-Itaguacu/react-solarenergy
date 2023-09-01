@@ -1,5 +1,5 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { Login } from "../pages/login/Login";
+import { Login } from "../pages/login/LoginPage";
 import { Dashboard } from "../pages/dashboard/Dashboard";
 import { UnidadeGeradora } from "../pages/unidade-geradora/UnidadeGeradora";
 import { LancamentoMensal } from "../pages/lancamento-mensal/LancamentoMensal";
