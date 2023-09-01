@@ -33,6 +33,9 @@ label{
 }
 
 select{
+    color: #374557;
+    font-family: Poppins;
+    font-size: 24px;
     width: 290.575px;
     height: 59px;
     flex-shrink: 0;
@@ -42,6 +45,9 @@ select{
 }
 
 input{
+    color: #374557;
+    font-family: Poppins;
+    font-size: 24px;
     width: 206px;
     height: 50.874px;
     flex-shrink: 0;
@@ -52,6 +58,7 @@ input{
 
 button{
     display: flex;
+    justify-content: center;
     width: 252px;
     padding: 16px 24px;
     align-items: center;
