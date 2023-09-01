@@ -1,6 +1,4 @@
-//import { FontAwersomeIcon } from 'react-fontawesome';
-//import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-//import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { FiInbox, FiLock } from "react-icons/fi";
 
 
 const LoginPage = () => {
@@ -33,6 +31,9 @@ const LoginPage = () => {
                         <span className="d-block">Seja bem vindo</span>
                     </div>
                     <div className="input-container">
+                        <span className="input-icon">
+                            <FiInbox />
+                        </span>
                         <input
                             id="input"
                             type="email"
@@ -41,6 +42,9 @@ const LoginPage = () => {
                         />
                     </div>
                     <div className="input-container">
+                        <span className="input-icon">
+                            <FiLock />
+                        </span>
                         <input
                             id="input"
                             type="password"
