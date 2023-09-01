@@ -62,11 +62,21 @@ export const LancamentoGeracaoMensal = () => {
           </div>
           <div className="data">
             <label htmlFor="">Mês/ano</label>
-            <input type="month" name="data" />
+            <input
+              type="month"
+              name="data"
+              value={data}
+              onChange={(e) => setData(e.target.value)}
+            />
           </div>
           <div className="total">
             <label htmlFor="">Total kw gerado</label>
-            <input type="number" name="kw" />
+            <input
+              type="number"
+              name="kw"
+              value={total}
+              onChange={(e) => setTotal(e.target.value)}
+            />
           </div>
           <div className="botao">
             <button type="submit" className="btn btn-primary">
