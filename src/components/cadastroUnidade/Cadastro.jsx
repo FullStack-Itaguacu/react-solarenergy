@@ -67,7 +67,6 @@ export const CadastroUnidade = () => {
 
   return (
     <div>
-      <h1 className="">Unidades</h1>
       {error && <p>Erro ao realizar lançamento.</p>}
       <h2>Cadastro de Unidade Geradora</h2>
       <Form
