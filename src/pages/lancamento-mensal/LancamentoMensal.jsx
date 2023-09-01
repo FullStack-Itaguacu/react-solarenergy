@@ -1,7 +1,9 @@
-import React from 'react'
+import { LancamentoGeracaoMensal } from "../../components/Lancamento-mensal/LancamentoMensal"
 
 export const LancamentoMensal = () => {
   return (
-    <div>LancamentoMensal</div>
-  )
+    <div>
+        <LancamentoGeracaoMensal />
+    </div>
+    )
 }
