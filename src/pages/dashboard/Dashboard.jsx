@@ -1,5 +1,10 @@
+import { LineChart } from "../../components/grafico/LineChart"
+
 export const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div>
+      Dashboard
+      <LineChart />
+    </div>
   )
 }
