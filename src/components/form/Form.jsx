@@ -18,7 +18,7 @@ export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
       {fields.map((field, index) => (
         <div key={index} className={field.className}>
           <label htmlFor={field.name}>{field.label}</label>
-          {field.icon && <i className={`icon-${field.icon}`} />}{" "}
+          {field.icon && <i className={`icon-${field.icon}`} />} <br />
           <input
             type={field.type}
             id={field.name}
