@@ -1,8 +1,3 @@
-import React from 'react'
-
 export const UnidadeGeradora = () => {
-  return (
-    <div>UnidadeGeradora</div>
-  )
-}
-
+  return <div>Unidade Geradora</div>;
+};

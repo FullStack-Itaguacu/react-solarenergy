@@ -1,7 +1,9 @@
-import React from 'react'
+import { CadastroUnidade } from '../../components/cadastroUnidade/Cadastro';
 
 export const LancamentoMensal = () => {
   return (
-    <div>LancamentoMensal</div>
-  )
-}
+    <div>
+      <CadastroUnidade />
+    </div>
+  );
+};
