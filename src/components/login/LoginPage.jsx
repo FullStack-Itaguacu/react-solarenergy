@@ -1,6 +1,5 @@
 import { FiInbox, FiLock } from "react-icons/fi";
 
-
 const LoginPage = () => {
     <div className="container d-flex justify-content-center align-items-center min-vh-100">
         <div className="row border rounded-5 p-3 bg-white shadow-none box-area">
