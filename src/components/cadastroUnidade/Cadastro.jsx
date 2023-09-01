@@ -34,28 +34,21 @@ export const CadastroUnidade = () => {
     },
     { type: "checkbox", label: "Ativa", name: "ativa", placeholder: "check" },
   ];
+  const ENDPOINT_UNIDADES = "http://localhost:3000/unidades";
 
-  const handleUnidadeSubmit = async (formData) => {
+  const validarInputs = (formData) => {
+    const { apelido, local, marca, modelo } = formData;
+    if (!apelido || !local || !marca || !modelo) {
+      alert("Preencha todos os campos");
+      return false;
+    }
+    return true;
+  };
+
+  const postNovaUnidade = async (novaUnidade) => {
     try {
-      const novaUnidade = {
-        id: Math.random().toString(36).substring(7),
-        apelido: formData.apelido,
-        local: formData.local,
-        marca: formData.marca,
-        modelo: formData.modelo,
-        ativa: formData.ativa || false,
-      };
-
-      console.log(formData);
-
-      const response = await axios.get("/database/data.json");
-      const data = response.data;
-
-      data.unidades.push(novaUnidade);
-
-      const updatedResponse = await axios.put("/database/data.json", data);
-
-      if (updatedResponse.status === 200) {
+      const updatedResponse = await axios.post(ENDPOINT_UNIDADES, novaUnidade);
+      if (updatedResponse.status === 201) {
         console.log("Unidade cadastrada com sucesso");
         setError(false);
       } else {
@@ -63,9 +56,13 @@ export const CadastroUnidade = () => {
         setError(true);
       }
     } catch (error) {
-      console.error("Erro ao cadastrar unidade:", error);
+      console.error(`Error: ${error.msg}`);
       setError(true);
     }
+  };
+
+  const handleUnidadeSubmit = async (formData) => {
+    validarInputs(formData) && (await postNovaUnidade(formData));
   };
 
   return (
