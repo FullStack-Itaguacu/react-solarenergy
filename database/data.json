@@ -1,0 +1,46 @@
+{
+  "usuarios": [
+    {
+      "id": "oioi",
+      "email": "rosana@email.com",
+      "senha": "minhasenha"
+    },
+    {
+      "id": "eiei",
+      "email": "danilo@email.com",
+      "senha": "123456"
+    }
+  ],
+  "unidades": [
+    {
+      "id": "abc",
+      "apelido": "Painel 1",
+      "local": "Rua 5",
+      "marca": "Canadian",
+      "modelo": "155w",
+      "ativa": true
+    },
+    {
+      "id": "def",
+      "apelido": "Painel 2",
+      "local": "Rua 10",
+      "marca": "Borboletinha",
+      "modelo": "220w",
+      "ativa": false
+    }
+  ],
+  "lancamentos": [
+    {
+      "id": "123",
+      "id_unidade": "def",
+      "data": "02/2022",
+      "total": 80
+    },
+    {
+      "id": "456",
+      "id_unidade": "def",
+      "data": "03/2022",
+      "total": 160
+    }
+  ]
+}
