@@ -1,3 +1,9 @@
+import { CadastroUnidade } from "../../components/cadastroUnidade/Cadastro";
+
 export const UnidadeGeradora = () => {
-  return <div>Unidade Geradora</div>;
+  return (
+    <>
+    <CadastroUnidade/>
+    </>
+  )
 };
