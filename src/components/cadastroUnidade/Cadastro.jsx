@@ -49,14 +49,14 @@ export const CadastroUnidade = () => {
     try {
       const updatedResponse = await axios.post(ENDPOINT_UNIDADES, novaUnidade);
       if (updatedResponse.status === 201) {
-        console.log("Unidade cadastrada com sucesso");
+        alert("Unidade cadastrada com sucesso");
         setError(false);
       } else {
-        console.log("Erro ao cadastrar unidade");
+        alert("Erro ao cadastrar unidade");
         setError(true);
       }
     } catch (error) {
-      console.error(`Error: ${error.msg}`);
+      alert(`Error: ${error}`);
       setError(true);
     }
   };
