@@ -17,7 +17,7 @@ export const UnidadeGeradora = () => {
         Mudar formulario{" "}
       </button>
       {renderizarCadastroUnidade ? (
-        <CadastroUnidade />
+        <CadastroUnidade mudarFormulario={mudarFormulario}/>
       ) : (
         <>
           <h1>Lista de unidades</h1>

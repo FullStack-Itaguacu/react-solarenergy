@@ -3,7 +3,7 @@ import axios from "axios";
 import { Form } from "../form/Form";
 import "./Cadastro.css";
 
-export const CadastroUnidade = () => {
+export const CadastroUnidade = ({ mudarFormulario }) => {
   const [error, setError] = useState(false);
 
   const unidadeFields = [
@@ -51,6 +51,7 @@ export const CadastroUnidade = () => {
       if (updatedResponse.status === 201) {
         alert("Unidade cadastrada com sucesso");
         setError(false);
+        mudarFormulario();
       } else {
         alert("Erro ao cadastrar unidade");
         setError(true);
