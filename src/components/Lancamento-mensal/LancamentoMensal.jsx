@@ -7,6 +7,7 @@ export const LancamentoGeracaoMensal = () => {
   const [unidadeGeradora, setUnidadeGeradora] = useState("");
   const [data, setData] = useState("");
   const [total, setTotal] = useState("");
+  const [formulario, setFormulario] = useState(false);
   const lancamento = {
     id_unidade: unidadeGeradora,
     data: data,
@@ -24,18 +25,34 @@ export const LancamentoGeracaoMensal = () => {
       });
   }, []);
 
+  const validar = () => {
+    if(unidadeGeradora && data && total) {
+      setFormulario(true);
+    } else {
+      setFormulario(false)
+    }
+  };
+
+useEffect(() => {
+  validar();
+}, [unidadeGeradora, data, total]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios
-      .post("http://localhost:3000/lancamentos", lancamento)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+    if (formulario) {
+      axios
+        .post("http://localhost:3000/lancamentos", lancamento)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      alert("Preencha todos os campos!");
+    }
+  }
 
   return (
     <div>
@@ -48,7 +65,7 @@ export const LancamentoGeracaoMensal = () => {
           <div className="unidade">
             <label htmlFor="">Unidade Geradora</label>
             <select
-              name=""
+              name="unidade"
               id=""
               value={unidadeGeradora}
               onChange={(e) => setUnidadeGeradora(e.target.value)}
@@ -73,7 +90,7 @@ export const LancamentoGeracaoMensal = () => {
             <label htmlFor="">Total kw gerado</label>
             <input
               type="number"
-              name="kw"
+              name="total"
               value={total}
               onChange={(e) => setTotal(e.target.value)}
             />
