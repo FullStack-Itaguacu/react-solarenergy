@@ -8,37 +8,21 @@ import { MenuLateral } from "../components/menu-lateral/menu-lateral";
 
 
 
-
-const MenuLayout = () => {
-
-  return (
-    <div>
-      <MenuLateral />
-
-      <Routes>
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="unidade-geradora" element={<UnidadeGeradora />} />
-        <Route path="lancamento-mensal" element={<LancamentoMensal />} /> 
-      </Routes>
-    </div>
-  );
-}
-
 export default function AppRotas() {
 
   return (
     <BrowserRouter>
+    <MenuLateral>
       <Routes>
-
         <Route path="/" element={<Login />} />
+         <Route path="dashboard" element={<Dashboard />} />
+          <Route path="unidade-geradora" element={<UnidadeGeradora />} />
+          <Route path="lancamento-mensal" element={<LancamentoMensal />} />
 
-        <Route path="/dashboard" element={<MenuLayout />} />
-        <Route path="/unidade-geradora" element={<MenuLayout />} />
-        <Route path="/lancamento-mensal" element={<MenuLayout />} />
-        
         <Route path="*" element={<Error />} />
 
       </Routes>
+      </MenuLateral>
     </BrowserRouter>
   );
 
