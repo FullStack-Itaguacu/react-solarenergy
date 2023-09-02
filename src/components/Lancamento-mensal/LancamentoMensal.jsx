@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./Lancamento-mensal.module.css";
+import styles from "./Lancamento-mensal.module.css";
 
 export const LancamentoGeracaoMensal = () => {
   const [unidades, setUnidades] = useState([]);
@@ -26,16 +26,16 @@ export const LancamentoGeracaoMensal = () => {
   }, []);
 
   const validar = () => {
-    if(unidadeGeradora && data && total) {
+    if (unidadeGeradora && data && total) {
       setFormulario(true);
     } else {
-      setFormulario(false)
+      setFormulario(false);
     }
   };
 
-useEffect(() => {
-  validar();
-}, [unidadeGeradora, data, total]);
+  useEffect(() => {
+    validar();
+  }, [unidadeGeradora, data, total]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,7 +52,7 @@ useEffect(() => {
     } else {
       alert("Preencha todos os campos!");
     }
-  }
+  };
 
   return (
     <div>
@@ -60,45 +60,47 @@ useEffect(() => {
         <h1>Lançamento de geração mensal</h1>
       </header>
 
-      <div className="formulario">
+      <div className={styles.formulario}>
         <form onSubmit={handleSubmit}>
-          <div className="unidade">
-            <label htmlFor="">Unidade Geradora</label>
-            <select
-              name="unidade"
-              id=""
-              value={unidadeGeradora}
-              onChange={(e) => setUnidadeGeradora(e.target.value)}
-            >
-              {unidades.map((unidade) => (
-                <option key={unidade.id} value={unidade.id}>
-                  {unidade.apelido}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="data">
-            <label htmlFor="">Mês/ano</label>
-            <input
-              type="month"
-              name="data"
-              value={data}
-              onChange={(e) => setData(e.target.value)}
-            />
-          </div>
-          <div className="total">
-            <label htmlFor="">Total kw gerado</label>
-            <input
-              type="number"
-              name="total"
-              value={total}
-              onChange={(e) => setTotal(e.target.value)}
-            />
-          </div>
-          <div className="botao">
-            <button type="submit" className="btn btn-primary">
-              Cadastro
-            </button>
+          <div className={styles.gridContainer}>
+            <div className={styles.unidade}>
+              <label>Unidade Geradora</label>
+              <select
+                name=""
+                id=""
+                value={unidadeGeradora}
+                onChange={(e) => setUnidadeGeradora(e.target.value)}
+              >
+                {unidades.map((unidade) => (
+                  <option key={unidade.id} value={unidade.id}>
+                    {unidade.apelido}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className={styles.data}>
+              <label htmlFor="">Mês/ano</label>
+              <input
+                type="month"
+                name="data"
+                value={data}
+                onChange={(e) => setData(e.target.value)}
+              />
+            </div>
+            <div className={styles.total}>
+              <label htmlFor="">Total kw gerado</label>
+              <input
+                type="number"
+                name="kw"
+                value={total}
+                onChange={(e) => setTotal(e.target.value)}
+              />
+            </div>
+            <div className={styles.botao}>
+              <button type="submit" className="btn btn-primary">
+                Cadastro
+              </button>
+            </div>
           </div>
         </form>
       </div>
