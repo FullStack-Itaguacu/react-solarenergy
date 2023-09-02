@@ -14,12 +14,22 @@ p {
 }
 
 .box-area {
-  width: 930px;
+  width: 950px;
+}
+
+.left-box img {
+  position: relative;
+  height: 90vh;
+  width: 500px;
+  background: url('src/img/ImagemBGLogin.png');
+  background-size: cover;
+ 
 }
 
 .right-box {
-  padding: 40px 30px 40px 40px;
+  padding: 40px 60px 40px 70px;
 }
+
 
 #input::placeholder {
   font-size: 0.9rem;

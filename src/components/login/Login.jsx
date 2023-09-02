@@ -1,23 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faLock, faUserLock } from "@fortawesome/free-solid-svg-icons";
 
 export default function Login() {
   return (
     <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="row box-area">
+      <div className="row rounded-3 shadow box-area">
         <div className="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
           <div className="featured-img">
-            <img
-              id="featured-img"
-              src="src/img/ImagemBGLogin.png"
-              className="img-fluid"
-              width="455px"
-              alt="featured"
-            />
+            <img />
           </div>
         </div>
 
-        <div className="col-md-6 right-box">
+        <div className="col-md-6 d-flex justify-content-center align-items-center right-box">
           <div className="row align-items-center">
             <div className="col-md-12 d-flex justify-content-center align-items-center logo">
               <img
@@ -32,14 +27,16 @@ export default function Login() {
             <div className="input-container">
               <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
               <input
-              id="input"
+                id="input"
                 type="text"
                 className="form-control form-control-lg bg-light fs-6"
                 placeholder="E-mail"
               />
             </div>
-            <div className="input-group mb-3">
+            <div className="input-container">
+              <FontAwesomeIcon icon={faLock} className="input-icon" />
               <input
+                id="input"
                 type="text"
                 className="form-control form-control-lg bg-light fs-6"
                 placeholder="Senha"
