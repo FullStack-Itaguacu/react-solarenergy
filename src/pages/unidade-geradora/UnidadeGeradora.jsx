@@ -1,10 +1,26 @@
-import { MenuLateral } from '../../components/menu-lateral/menu-lateral'
+import { CadastroUnidade } from "../../components/cadastroUnidade/Cadastro";
+import { useState } from "react";
 
 export const UnidadeGeradora = () => {
-  return (
-    <div>
-      <div>UnidadeGeradora</div>
-    </div>
-  )
-}
+  const [renderizarCadastroUnidade, setRenderizarCadastroUnidade] =
+    useState(false);
 
+  return (
+    <>
+      {/* este button e apenas para testes e debera ser eliminado quando este pronto o menu lateral */}
+      <button
+        onClick={() => setRenderizarCadastroUnidade(!renderizarCadastroUnidade)}
+      >
+        Mudar formulario{" "}
+      </button>
+      {renderizarCadastroUnidade ? (
+        <CadastroUnidade />
+      ) : (
+        <>
+          <h1>Lista de unidades</h1>
+          {/* Este codigo debe ser substituido pelo componente de lista de unidades  */}
+        </>
+      )}{" "}
+    </>
+  );
+};
