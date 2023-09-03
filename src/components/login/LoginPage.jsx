@@ -5,10 +5,10 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 export default function Login() {
     return (
         <div className="container d-flex justify-content-center align-items-center min-vh-100">
-            <div className="row rounded-3 shadow box-area">
+            <div className="row rounded-3">
                 <div className="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
                     <div className="featured-img">
-                        <img />
+                        <img src="../src/assets/LoginImagem/imagemeolicasolar.png  " alt="imagem de um sistema solar com um sistema eolico" />
                     </div>
                 </div>
 
@@ -16,7 +16,7 @@ export default function Login() {
                     <div className="row align-items-center">
                         <div className="col-md-12 d-flex justify-content-center align-items-center logo">
                             <img
-                                src="src/img/Logo.png"
+                                src="../src/assets/LoginImagem/logo.png"
                                 width="250px"
                                 alt="logo solar energy"
                             />
@@ -25,7 +25,7 @@ export default function Login() {
                             <p>Seja bem vindo</p>
                         </div>
                         <div className="input-container">
-                            <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
+                            <FontAwesomeIcon icon={faEnvelope} style={{ color: "#afacac", }} className="input-icon" />
                             <input
                                 id="input"
                                 type="text"
@@ -34,7 +34,7 @@ export default function Login() {
                             />
                         </div>
                         <div className="input-container">
-                            <FontAwesomeIcon icon={faLock} className="input-icon" />
+                            <FontAwesomeIcon icon={faLock} style={{ color: "#afacac", }} className="input-icon" />
                             <input
                                 id="input"
                                 type="text"
