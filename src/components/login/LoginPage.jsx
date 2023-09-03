@@ -37,7 +37,7 @@ export default function Login() {
                             <FontAwesomeIcon icon={faLock} className="input-icon" />
                             <input
                                 id="input"
-                                type="text"
+                                type="password"
                                 className="form-control form-control-lg bg-light fs-6"
                                 placeholder="Senha"
                             />
