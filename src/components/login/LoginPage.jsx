@@ -25,7 +25,7 @@ export default function Login() {
                             <p>Seja bem vindo</p>
                         </div>
                         <div className="input-container">
-                            <FontAwesomeIcon icon={faEnvelope} style={{ color: "#afacac", }} className="input-icon" />
+                            <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
                             <input
                                 id="input"
                                 type="text"
@@ -34,7 +34,7 @@ export default function Login() {
                             />
                         </div>
                         <div className="input-container">
-                            <FontAwesomeIcon icon={faLock} style={{ color: "#afacac", }} className="input-icon" />
+                            <FontAwesomeIcon icon={faLock} className="input-icon" />
                             <input
                                 id="input"
                                 type="text"
