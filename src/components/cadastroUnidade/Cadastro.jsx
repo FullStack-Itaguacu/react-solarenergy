@@ -2,8 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import { Form } from "../form/Form";
 import "./Cadastro.css";
+import PropTypes from "prop-types";
 
-export const CadastroUnidade = () => {
+export const CadastroUnidade = ({ mudarFormulario }) => {
   const [error, setError] = useState(false);
 
   const unidadeFields = [
@@ -49,14 +50,15 @@ export const CadastroUnidade = () => {
     try {
       const updatedResponse = await axios.post(ENDPOINT_UNIDADES, novaUnidade);
       if (updatedResponse.status === 201) {
-        console.log("Unidade cadastrada com sucesso");
+        alert("Unidade cadastrada com sucesso");
         setError(false);
+        mudarFormulario();
       } else {
-        console.log("Erro ao cadastrar unidade");
+        alert("Erro ao cadastrar unidade");
         setError(true);
       }
     } catch (error) {
-      console.error(`Error: ${error.msg}`);
+      alert(`Error: ${error}`);
       setError(true);
     }
   };
@@ -76,4 +78,8 @@ export const CadastroUnidade = () => {
       />
     </div>
   );
+};
+
+CadastroUnidade.propTypes = {
+  mudarFormulario: PropTypes.func.isRequired,
 };
