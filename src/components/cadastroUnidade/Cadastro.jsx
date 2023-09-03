@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Form } from "../form/Form";
 import "./Cadastro.css";
+import PropTypes from "prop-types";
 
 export const CadastroUnidade = ({ mudarFormulario }) => {
   const [error, setError] = useState(false);
@@ -77,4 +78,8 @@ export const CadastroUnidade = ({ mudarFormulario }) => {
       />
     </div>
   );
+};
+
+CadastroUnidade.propTypes = {
+  mudarFormulario: PropTypes.func.isRequired,
 };
