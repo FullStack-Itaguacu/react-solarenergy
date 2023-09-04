@@ -1,5 +1,5 @@
 import CardUnidades from "../cardUnidades/cardUnidades"
-import styles from './DashboardCards.module.css'
+import styles from './dashboardCards.module.css'
 import dadosUnidades from "../../services/dadosUnidades"
 import dadosLacamentos from "../../services/dadosLancamentos";
 

@@ -1,4 +1,4 @@
-import styles from './CardUnidades.module.css'
+import styles from './cardUnidades.module.css'
 
 const CardUnidades = ({titulo,valor}) => {
     return (
