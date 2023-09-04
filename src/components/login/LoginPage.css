@@ -7,6 +7,12 @@
     font-family: 'Roboto Slab', serif;
 }
 
+/*p {
+    color: #374557;
+    font-weight: 100;
+    font-size: 1.2rem;
+}*/
+
 .box-area {
     width: 950px;
 }
@@ -15,39 +21,35 @@
     position: relative;
     height: 90vh;
     width: 500px;
-    background-size: cover;
+
 }
 
-.right-box {
+/*.right-box {
     padding: 40px 60px 40px 70px;
-}
+}*/
 
-p {
-    color: #374557;
-    font-weight: 100;
-    font-size: 1.2rem;
-}
-
-.input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
 
 #input::placeholder {
     font-size: 0.9rem;
     color: #A098AE;
 }
 
+.input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
 .input-icon {
     position: absolute;
-    left: 25px;
+    left: 30px;
+    top: 12px;
     color: #A098AE
 }
 
 .form-control {
-    padding-left: 40px;
+    padding-left: 50px;
 }
 
 #btn input {
@@ -63,8 +65,7 @@ p {
 
 #btn :hover {
     transform: scale(1.1);
-    cursor: pointer;
-    background-color: #025f43;
+    background-color: #04976b;
 }
 
 
