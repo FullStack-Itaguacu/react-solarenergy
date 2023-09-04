@@ -1,10 +1,10 @@
-import LoginPage from '../../components/login/LoginPage';
+import Login from '../../components/login/LoginPage';
 
 
-export function Login () {
+export function LoginPage () {
     return (
         <div>
-            <LoginPage />
+            <Login />
         </div>
     )
 }
