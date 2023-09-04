@@ -7,7 +7,7 @@ const CardUnidades = ({titulo,valor}) => {
                 <p>{titulo}</p>
             </div>
             <div className={styles.textUnidade}>
-                <p>{valor}</p>
+                <p>{titulo=="Média de energia" ? valor.toString()+" Kw" : valor}</p>
             </div>
         </div>
     )

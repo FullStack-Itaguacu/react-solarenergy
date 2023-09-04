@@ -14,7 +14,7 @@ export default function dadosLacamentos() {
         setCarregando(false);
         setMediaConsumo(parseFloat((response.data.map(
           lancamentos => lancamentos.total).reduce((a, b) => a + b, 0) / response.data.length))
-          .toFixed(2));
+          .toFixed(0));
       } catch (error) {
         console.log(error);
       }

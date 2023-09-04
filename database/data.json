@@ -27,14 +27,6 @@
       "marca": "Borboletinha",
       "modelo": "220w",
       "ativa": false
-    },
-    {
-      "id": "arr",
-      "apelido": "Painel 3",
-      "local": "Rua 15",
-      "marca": "SolarEdge",
-      "modelo": "550w",
-      "ativa": true
     }
   ],
   "lancamentos": [
@@ -49,12 +41,6 @@
       "id_unidade": "def",
       "data": "03/2022",
       "total": 160
-    },
-    {
-      "id": "124",
-      "id_unidade": "def",
-      "data": "03/2022",
-      "total": 95
     }
   ]
 }
