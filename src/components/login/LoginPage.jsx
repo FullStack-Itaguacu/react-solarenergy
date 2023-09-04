@@ -65,15 +65,16 @@ const Login =() => {
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
                                     </div>
+                                    <div className="actions">
+                                        <button type="submit" className="btn">
+                                        Entrar
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                         
-                        <div className="actions">
-                            <button type="submit" className="btn">
-                            Entrar
-                            </button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
