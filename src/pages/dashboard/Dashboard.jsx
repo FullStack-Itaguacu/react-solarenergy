@@ -1,9 +1,9 @@
-import { MenuLateral } from '../../components/menu-lateral/menu-lateral'
+import DashboardCards from "../../components/dashboardCards/dashboardCards"
 
 export const Dashboard = () => {
   return (
     <div>
-      <div>Dashboard</div>
+      <DashboardCards />
     </div>
   )
 }

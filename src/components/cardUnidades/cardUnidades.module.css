@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Mulish:wght@700&family=Poppins:wght@500&family=Roboto:wght@500&display=swap');
+
+
+.boxCard{
+    width: 258px;
+    height: 134px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: solid 1px #DFE0EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.textTipo{
+    color:#9FA2B4;
+    font-size: 19px;
+    font-weight: 500;
+    font-family: 'Mulish', sans-serif;
+    line-height: 24px;
+    letter-spacing: 1px;
+}
+.textUnidade{
+    color:#252733;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 24px;
+    font-family: 'Mulish', sans-serif;
+    line-height: 50px;
+    letter-spacing: 1px;
+}

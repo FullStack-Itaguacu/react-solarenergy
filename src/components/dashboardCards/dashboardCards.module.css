@@ -1,0 +1,8 @@
+.cardsUnidadades{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top:80px;
+    width: 100%;
+    gap: 24px;
+}
