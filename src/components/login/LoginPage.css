@@ -7,11 +7,11 @@
     font-family: 'Roboto Slab', serif;
 }
 
-/*p {
+p {
     color: #374557;
     font-weight: 100;
     font-size: 1.2rem;
-}*/
+}
 
 .box-area {
     width: 950px;
@@ -51,19 +51,19 @@
     border: none;
 }
 
-#btn input {
-    border-radius: 4px;
-    font-size: 1.1rem;
-    color: #FAFAFA;
-    background-color: #4CBC9A;
-    box-shadow: 0px 4px 15px rgb(0 0 0 / 30%);
+.btn {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
     border: none;
-    padding: 8px;
-    transition: transform .60s;
+    background-color: #0bd196;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 5px;
 }
 
-#btn :hover {
-    transform: scale(1.1);
+.btn:hover {
     background-color: #04976b;
 }
 
