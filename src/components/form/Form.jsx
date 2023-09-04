@@ -7,7 +7,15 @@ export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
     const formData = {}; // foi criado um objeto para armazenar os dados do formulário
 
     fields.forEach((field) => {
-      formData[field.name] = event.target[field.name].value; // Preenche o objeto com os valores digitados do formulário
+      if (field.type === "checkbox") {
+        if (event.target[field.name].checked)
+          formData[field.name] = event.target[field.name].checked;
+        else {
+          formData[field.name] = false;
+        }
+      } else {
+        formData[field.name] = event.target[field.name].value; // Preenche o objeto com os valores digitados do formulário
+      }
     });
 
     onSubmit(formData); // para chamar a função onSubmit com o objeto de dados do formulário
