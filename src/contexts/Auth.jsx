@@ -1,7 +1,3 @@
-function Auth() {
-    return (
-        <div>Auth</div>
-    )
-}
+import { createContext } from "react";
 
-export default Auth
+export const AuthContext = createContext({});
