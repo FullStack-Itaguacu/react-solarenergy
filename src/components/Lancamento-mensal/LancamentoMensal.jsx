@@ -42,44 +42,12 @@ export const LancamentoGeracaoMensal = () => {
 
     if (formulario) {
       axios
-        //.post("http://localhost:3000/lancamentos", lancamento)
-        //.then((response) => {
-        //  console.log(response);
-        //})
-
-        //Recuperar lançamentos já existentes na base de dados json
-        .get("http://localhost:3000/lancamentos")
-        .then((response) =>{
-          const lancamentosExistentes = response.data.lancamentos;
-
-          //Criação de um novo lancamento com base nos dados do formulário
-          const novoLancamento = {
-            //id: Math.random().toString(36).substring(7),
-            id_unidade: unidadeGeradora,
-            data: data,
-            total: total, 
-          };
-
-          //Adicionar o novo lançamento a base de dados json
-          lancamentosExistentes.push(novoLancamento);
-          const dadosAtualizados = {
-            lancamentos: lancamentosExistentes
-          } 
-
-          //Atualizar a base de dados json com os novos dados
-          axios
-            .put("http://localhost:3000/lancamentos", dadosAtualizados)
-            .then((response) =>{
-              console.log(response);
-              
-              //Limpar os dados do formulário após enviar os dados para a base json
-              setFormulario({
-                id_unidade: "",
-                data: "",
-                total: 0,
-              });
-            });
-        })  
+        .post("http://localhost:3000/lancamentos", lancamento)
+        .then((response) => {
+          console.log(response);
+          alert("Lançamento realizado com sucesso!");
+          limparCampos();
+        })
         .catch((error) => {
           console.log(error);
         });
@@ -87,6 +55,12 @@ export const LancamentoGeracaoMensal = () => {
       alert("Preencha todos os campos!");
     }
   };
+
+  function limparCampos() {
+    setUnidadeGeradora("");
+    setData("");
+    setTotal("");
+  }
 
   return (
     <div>
@@ -105,6 +79,7 @@ export const LancamentoGeracaoMensal = () => {
                 value={unidadeGeradora}
                 onChange={(e) => setUnidadeGeradora(e.target.value)}
               >
+                <option value="">Escolha a unidade</option>
                 {unidades.map((unidade) => (
                   <option key={unidade.id} value={unidade.id}>
                     {unidade.apelido}
