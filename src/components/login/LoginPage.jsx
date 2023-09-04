@@ -39,35 +39,42 @@ export default function Login() {
                         </div>
                         <div className="header-text mb-4 text-center">
                             <p>Seja bem vindo</p>
-                            <p>{String( authenticated )}</p>
                         </div>
-                        <form className="input-container" onSubmit={handleSubmit}>
-                            <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
-                            <input
-                                id="input"
-                                type="text"
-                                className="form-control mb-3"
-                                placeholder="E-mail"
-                                required
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-
-                            <div className="input-container">
-                                <FontAwesomeIcon icon={faLock} className="input-icon" />
-                                <input
-                                    id="input"
-                                    type="password"
-                                    className="form-control"
-                                    placeholder="Senha"
-                                    required
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                            </div>
-                        </form>
+                        <div className="col-md-12">
+                            <form onSubmit={handleSubmit}>
+                                <div className="mb-3">
+                                    <div className="input-group">
+                                        <span className="input-group-text">
+                                            <FontAwesomeIcon icon={faEnvelope} />
+                                        </span>
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            placeholder="Email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="mb-3">
+                                    <div className="input-group">
+                                        <span className="input-group-text">
+                                            <FontAwesomeIcon icon={faLock} />
+                                        </span>
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            placeholder="Senha"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
                         <div className="d-grid gap-2 col-4 mt-2 mx-auto" id="btn">
-                            <input id="btn" className="btn" value="Entrar" type="submit" />
+                            <input className="btn" value="Entrar" type="submit" />
                         </div>
                     </div>
                 </div>

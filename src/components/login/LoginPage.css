@@ -24,14 +24,15 @@
 
 }
 
-/*.right-box {
+.right-box {
     padding: 40px 60px 40px 70px;
-}*/
+}
 
 
 #input::placeholder {
     font-size: 0.9rem;
     color: #A098AE;
+    border: none;
 }
 
 .input-container {
@@ -39,17 +40,15 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    border: none;
 }
 
 .input-icon {
     position: absolute;
     left: 30px;
     top: 12px;
-    color: #A098AE
-}
-
-.form-control {
-    padding-left: 50px;
+    color: #A098AE;
+    border: none;
 }
 
 #btn input {
