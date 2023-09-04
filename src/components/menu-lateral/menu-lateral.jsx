@@ -8,6 +8,7 @@ import iconeDashboardCinza from "./imagens/icone-dashboard-cinza.png";
 import iconeUnidadesCinza from "./imagens/icone-unidades-cinza.png";
 import logoImage from "./imagens/logo-menu-bg-branco.png";
 import { useEffect, useState } from "react";
+import { TopBar } from '../top-bar/top-bar';
 
 export const MenuLateral = ({ children }) => {
   const [nome, setNome] = useState('');
@@ -34,10 +35,6 @@ export const MenuLateral = ({ children }) => {
       ) : (
       <>
         <div className={styles.container}>
-          <header className={styles.topBar}>
-            <h1>{nome}</h1>
-          </header>
-
           <div className={styles.content}>
             <aside className={styles.leftSidebar}>
               <div className={styles.leftContainerMenu}>
@@ -82,10 +79,13 @@ export const MenuLateral = ({ children }) => {
                   </Link>
                 </div>
               </div>
-            </aside>
-            <main className={styles.mainContent}>
-              {children}
-            </main>
+                </aside>
+                <div className={styles.contentBody}>
+                  <TopBar nome={nome} />
+                  <main className={styles.mainContent}>
+                    {children}
+                  </main>
+                </div>
           </div>
         </div>
       </>

@@ -1,5 +1,6 @@
-import { CadastroUnidade } from "../../components/cadastroUnidade/Cadastro";
+import { CadastroUnidade } from "../../components/cadastro-unidade/cadastro";
 import { useState } from "react";
+import './unidade-geradora.css'
 
 export const UnidadeGeradora = () => {
   const [renderizarCadastroUnidade, setRenderizarCadastroUnidade] =
@@ -9,21 +10,19 @@ export const UnidadeGeradora = () => {
   };
 
   return (
-    <>
-      {/* este button e apenas para testes e debera ser eliminado quando este pronto o menu lateral */}
-      <button
-        onClick={() => mudarFormulario()}
-      >
-        Mudar formulario{" "}
-      </button>
-      {renderizarCadastroUnidade ? (
-        <CadastroUnidade mudarFormulario={mudarFormulario}/>
-      ) : (
-        <>
-          <h1>Lista de unidades</h1>
-          {/* Este codigo debe ser substituido pelo componente de lista de unidades  */}
-        </>
-      )}{" "}
-    </>
+    <div className='container'>
+    {renderizarCadastroUnidade && (
+      <CadastroUnidade mudarFormulario={mudarFormulario} />
+    )}
+
+    {!renderizarCadastroUnidade && (
+      <>
+       {/* Colocar componente aqui */}
+        <button onClick={() => mudarFormulario()}>
+          Mudar formulário
+          </button>
+      </>
+    )}
+  </div>
   );
 };

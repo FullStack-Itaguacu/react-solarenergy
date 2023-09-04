@@ -1,0 +1,24 @@
+#apelido,
+#local,
+#marca,
+#modelo {
+  display: grid;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.sub-titulo {
+  color: #374557;
+}
+
+.checkbox-label {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+h2 {
+  margin-bottom: 51px;
+  font-size: 28px;
+}

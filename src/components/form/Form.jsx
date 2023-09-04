@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
+import "../form/form.css";
 
 export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const formData = {}; // foi criado um objeto para armazenar os dados do formulário
+    const formData = {};
 
     fields.forEach((field) => {
-      formData[field.name] = event.target[field.name].value; // Preenche o objeto com os valores digitados do formulário
+      formData[field.name] = event.target[field.name].value;
     });
 
-    onSubmit(formData); // para chamar a função onSubmit com o objeto de dados do formulário
+    onSubmit(formData); 
   };
 
   return (
@@ -18,18 +19,21 @@ export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
       {fields.map((field, index) => (
         <div key={index} className={field.className}>
           <label htmlFor={field.name}>{field.label}</label>
-          {field.icon && <i className={`icon-${field.icon}`} />} <br />
+          {field.icon && <i className={`icon-${field.icon}`} />}
           <input
             type={field.type}
             id={field.name}
             name={field.name}
             placeholder={field.placeholder}
+            className={field.inputClassName} 
           />
           {field.showCheckbox && (
-            <label>
-              <input type="checkbox" name={`${field.name}_checkbox`} />{" "}
+            <div>
+              <input type="checkbox" name={`${field.name}_checkbox`} />
+            <label >
               {field.checkboxLabel}
             </label>
+            </div>
           )}
         </div>
       ))}
@@ -49,6 +53,7 @@ Form.propTypes = {
       showCheckbox: PropTypes.bool,
       checkboxLabel: PropTypes.string,
       className: PropTypes.string,
+      inputClassName: PropTypes.string, 
     })
   ).isRequired,
   onSubmit: PropTypes.func.isRequired,

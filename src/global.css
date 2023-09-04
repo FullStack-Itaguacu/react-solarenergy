@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+label {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  color: #53575d;
+}
+
+input {
+  padding: 14px 20px;
+  border-radius: 4px;
+  border: 1px solid #53575d;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.input-pequeno {
+  width: 206px;
+}
+
+.input-medio {
+  width: 290px;
+}
+.input-grande {
+  width: 518px;
+}
+.input-extra-grande {
+  width: 574px;
+}
