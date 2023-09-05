@@ -82,6 +82,20 @@ p {
     background-color: #04976b;
 }
 
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.message {
+    color: #e90707;
+    margin-top: 20px;
+    text-align: center;
+}
+
 @media only screen and (max-width: 768px) {
     .box-area {
         margin: 0 10px;
