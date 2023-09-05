@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
+import styles from "./LoginPage.module.css";
 
-const Login =() => {
+const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -17,20 +18,20 @@ const Login =() => {
         navigate("/dashboard");
 
 
-      };
+    };
 
     return (
-        <div className="box-container">
-            <div className="row">
-                <div className="col-md-6 left-box">
-                    <div className="featured-img">
-                        <img src="../src/assets/LoginImagem/imagemeolicasolar.png  " alt="imagem de um sistema solar com um sistema eolico" />
-                    </div>
-                </div>
+        <div className={styles.boxContainer}>
+            <div className={styles.containerImage}>
 
-                <div className="d-flex justify-content-center align-items-center right-box">
-                    <div className="row align-items-center">
-                        <div className="col-md-12 d-flex justify-content-center align-items-center logo">
+                <img src="../src/assets/LoginImagem/imagemeolicasolar.png  " alt="imagem de um sistema solar com um sistema eolico" />
+
+            </div>
+
+            <div className={styles.containerInputs}>
+                
+                    <div className={styles.rightBox}>
+                        <div className={`col-md-12 d-flex justify-content-center align-items-center ${styles.logo}`}>
                             <img
                                 src="../src/assets/LoginImagem/logo.png"
                                 alt="logo solar energy"
@@ -39,8 +40,8 @@ const Login =() => {
                         <div className="header-text mb-4 text-center">
                             <p>Seja bem vindo</p>
                         </div>
-                        <div className="col-md-12">
-                            <form className="form" onSubmit={handleSubmit}>
+                        <div className={styles.containerDadosInputs}>
+                            <form className={styles.form} onSubmit={handleSubmit}>
                                 <div className="mb-3">
                                     <div className="input-group">
                                         <span className="input-group-text">
@@ -73,19 +74,19 @@ const Login =() => {
                                         />
                                     </div>
                                     <div className="actions">
-                                        <button type="submit" className="btn">
-                                        Entrar
+                                        <button type="submit" className={styles.btnLogin}>
+                                            Entrar
                                         </button>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                        
-                        
                     </div>
+
+
                 </div>
             </div>
-        </div>
+
     );
 }
 
