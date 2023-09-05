@@ -41,12 +41,16 @@ const adicionaUnidade = () => console.log("adicionaUnidade")
               <td>{item.local}</td>
               <td>{item.marca}</td>
               <td>{item.modelo}</td>
-              <Button variant="success" onClick={() => editarUnidade(item.id)}>
-                Editar
-              </Button>
-              <Button variant="danger" onClick={() => removerUnidade(item.id)}>
-                Remover
-              </Button>
+              <td>
+                <Button variant="success" onClick={() => editarUnidade(item.id)}>
+                  Editar
+                </Button>
+              </td>
+              <td>
+                <Button variant="danger" onClick={() => removerUnidade(item.id)}>
+                  Remover
+                </Button>
+              </td> 
             </tr>
           ))}
         </tbody>
