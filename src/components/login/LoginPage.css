@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
-* {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto Slab', serif;
 }
 
-p {
+.saudacao {
     color: #374557;
     font-weight: 100;
     font-size: 1.2rem;
@@ -41,7 +41,7 @@ p {
 }
 
 .input-group-text {
-    color:#A098AE;
+    color: #A098AE;
 }
 
 #input::placeholder {
@@ -80,6 +80,20 @@ p {
 
 .btn:hover {
     background-color: #04976b;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.message {
+    color: #e90707;
+    margin-top: 20px;
+    text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
