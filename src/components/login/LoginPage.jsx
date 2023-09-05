@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { FiLock } from "react-icons/fi";
+import { PiEnvelopeLight } from "react-icons/pi";
 import usersData from "../../../database/data.json";
 
 const Login = () => {
@@ -80,14 +79,14 @@ const Login = () => {
                             />
                         </div>
                         <div className="header-text mb-4 text-center">
-                            <p>Seja bem vindo</p>
+                            <p className="saudacao">Seja bem vindo</p>
                         </div>
                         <div className="col-md-12">
                             <form className="form" onSubmit={handleSubmit}>
                                 <div className="mb-3">
                                     <div className="input-group">
                                         <span className="input-group-text">
-                                            <FontAwesomeIcon icon={faEnvelope} />
+                                            <PiEnvelopeLight  />
                                         </span>
                                         <input
                                             id="email"
@@ -103,7 +102,7 @@ const Login = () => {
                                 <div className="mb-3">
                                     <div className="input-group">
                                         <span className="input-group-text">
-                                            <FontAwesomeIcon icon={faLock} />
+                                            <FiLock />
                                         </span>
                                         <input
                                             id="password"
