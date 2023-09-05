@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Table, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function ListaUnidades({ mudarFormulario }) {
 
@@ -24,7 +25,16 @@ export default function ListaUnidades({ mudarFormulario }) {
 
   const editarUnidade = () => console.log("editarUnidade")
 
-  const removerUnidade = () => console.log("removerUnidade")
+  const removerUnidade = (id) => {
+      fetch("http://localhost:3000/unidades/" + id, {
+        method: "DELETE",
+      });
+
+      window.location.reload(false);
+      alert(`Unidade com o ${id} foi removido com sucesso.`);
+      }
+
+
 
   return (
     <div>
@@ -45,9 +55,11 @@ export default function ListaUnidades({ mudarFormulario }) {
               <td>{item.marca}</td>
               <td>{item.modelo}</td>
               <td>
-                <Button variant="success" onClick={() => editarUnidade(item.id)}>
-                  Editar
-                </Button>
+                <Link to={`http://localhost:3000/unidades/${item.id}`}>
+                  <Button variant="success" onClick={() => editarUnidade(item.id)}>
+                    Editar
+                  </Button>
+                </Link>
               </td>
               <td>
                 <Button variant="danger" onClick={() => removerUnidade(item.id)}>
