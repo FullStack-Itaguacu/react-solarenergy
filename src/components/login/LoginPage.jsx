@@ -20,20 +20,19 @@ const Login =() => {
       };
 
     return (
-        <div className="container d-flex justify-content-center align-items-center min-vh-100">
-            <div className="row rounded-3">
-                <div className="col-md-6 d-flex justify-content-center align-items-center flex-column left-box">
+        <div className="box-container">
+            <div className="row">
+                <div className="col-md-6 left-box">
                     <div className="featured-img">
                         <img src="../src/assets/LoginImagem/imagemeolicasolar.png  " alt="imagem de um sistema solar com um sistema eolico" />
                     </div>
                 </div>
 
-                <div className="col-md-6 d-flex justify-content-center align-items-center right-box">
+                <div className="d-flex justify-content-center align-items-center right-box">
                     <div className="row align-items-center">
                         <div className="col-md-12 d-flex justify-content-center align-items-center logo">
                             <img
                                 src="../src/assets/LoginImagem/logo.png"
-                                width="250px"
                                 alt="logo solar energy"
                             />
                         </div>
