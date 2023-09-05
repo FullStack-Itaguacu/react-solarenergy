@@ -8,10 +8,11 @@ const Login =() => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("submit", { email, password });
-    };
+      };
 
     return (
         <div className="container d-flex justify-content-center align-items-center min-vh-100">
@@ -46,6 +47,7 @@ const Login =() => {
                                             type="email"
                                             placeholder="E-mail"
                                             className="form-control"
+                                            required
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
                                         />
@@ -61,6 +63,7 @@ const Login =() => {
                                             type="password"
                                             placeholder="Senha"
                                             className="form-control"
+                                            required
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
