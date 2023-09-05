@@ -30,15 +30,26 @@ export default function ListaUnidades({ mudarFormulario }) {
         method: "DELETE",
       });
 
-      window.location.reload(false);
-      alert(`Unidade com o ${id} foi removido com sucesso.`);
+      //window.location.reload(false);
+      alert(`Unidade com o ID ${id} removido com sucesso.`);
+      fetchData();
       }
 
 
 
   return (
     <div>
-      <Table className="my-4">
+      {
+        data.length === 0
+        ?
+        <>
+          <br />
+          <h5>Nenhuma unidade cadastrada</h5>
+          <h5>Use o botão abaixo para efetuar o cadastro</h5>
+        </>
+        :
+        <>
+        <Table className="my-4">
         <tbody>
           <tr>
             <th>ID</th>
@@ -71,6 +82,8 @@ export default function ListaUnidades({ mudarFormulario }) {
         </tbody>
       </Table>
       <br />
+      </>
+      }
       <Button onClick={() => mudarFormulario()}>Nova Unidade</Button>
     </div>
   );
