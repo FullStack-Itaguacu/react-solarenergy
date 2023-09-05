@@ -63,12 +63,7 @@ export const LancamentoGeracaoMensal = () => {
   }
 
   return (
-    <div>
-      <header>
-        <h1>Lançamento de geração mensal</h1>
-      </header>
-
-      <div className={styles.formulario}>
+    <div className={styles.formulario}>
         <form onSubmit={handleSubmit}>
           <div className={styles.gridContainer}>
             <div className={styles.unidade}>
@@ -113,6 +108,5 @@ export const LancamentoGeracaoMensal = () => {
           </div>
         </form>
       </div>
-    </div>
   );
 };
