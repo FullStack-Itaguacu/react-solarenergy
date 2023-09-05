@@ -20,7 +20,9 @@ export default function ListaUnidades() {
   useEffect(() => {
     fetchData();
   }, []);
-
+const editarUnidade = () => console.log("editarUnidade")
+const removerUnidade = () => console.log("removerUnidade")
+const adicionaUnidade = () => console.log("adicionaUnidade")
   return (
     <div>
       <Table className="my-4">
