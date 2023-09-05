@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&family=Raleway:wght@400;500&display=swap');
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.content {
+  padding-top: 69px;
+  padding-left: 62px;
+}
+/* formulario */
+form {
+  color: #161515;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+/* button */
+button {
+  background-color: #4c5df1;
+  width: 15.75rem;
+  height: auto;
+  margin-top: 48px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  padding: 16px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+#apelido,
+#local,
+#marca,
+#modelo {
+  display: grid;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  padding: 14px 20px;
+  border-radius: 4px;
+  border: 1px solid #53575d;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+}
+
+label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: #53575d;
+  font-size: 18px;
+}
+
+.sub-titulo {
+  color: #374557;
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+
+.checkbox-label {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+.checkbox-label {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+.input-pequeno {
+  width: 206px;
+}
+
+.input-extra-grande {
+  width: 574px;
+}

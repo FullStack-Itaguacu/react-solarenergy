@@ -1,5 +1,11 @@
+import { LineChart } from "../../components/grafico/LineChart"
+import DashboardCards from "../../components/dashboardCards/dashboardCards"
+
 export const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div>
+      <DashboardCards />
+      <LineChart />
+    </div>
   )
 }
