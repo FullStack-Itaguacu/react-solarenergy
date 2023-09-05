@@ -13,6 +13,14 @@
   ],
   "unidades": [
     {
+      "id": "abc",
+      "apelido": "Painel 1",
+      "local": "Rua 5",
+      "marca": "Canadian",
+      "modelo": "155w",
+      "ativa": true
+    },
+    {
       "id": "def",
       "apelido": "Painel 2",
       "local": "Rua 10",
