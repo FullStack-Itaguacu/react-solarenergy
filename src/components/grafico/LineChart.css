@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#lineChart {
+    width: 961px;
+    height: 646px;
+    top: 360px;
+    left: 614px;
+}
