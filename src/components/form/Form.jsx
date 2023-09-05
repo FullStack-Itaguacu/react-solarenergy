@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
   const handleSubmit = (event) => {
@@ -7,7 +7,7 @@ export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
     const formData = {}; // foi criado um objeto para armazenar os dados do formulário
 
     fields.forEach((field) => {
-      if (field.type === "checkbox") {
+      if (field.type === 'checkbox') {
         if (event.target[field.name].checked)
           formData[field.name] = event.target[field.name].checked;
         else {
@@ -32,10 +32,11 @@ export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
             id={field.name}
             name={field.name}
             placeholder={field.placeholder}
+            className={field.inputClassName}
           />
           {field.showCheckbox && (
             <label>
-              <input type="checkbox" name={`${field.name}_checkbox`} />{" "}
+              <input type="checkbox" name={`${field.name}_checkbox`} />{' '}
               {field.checkboxLabel}
             </label>
           )}
@@ -57,6 +58,7 @@ Form.propTypes = {
       showCheckbox: PropTypes.bool,
       checkboxLabel: PropTypes.string,
       className: PropTypes.string,
+      inputClassName: PropTypes.string,
     })
   ).isRequired,
   onSubmit: PropTypes.func.isRequired,
