@@ -1,23 +1,66 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
+import usersData from "../../../database/data.json";
 
-const Login =() => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const navigate = useNavigate();
+const Login = () => {
+        const [email, setEmail] = useState("");
+        const [password, setPassword] = useState("");
+        const [message, setMessage] = useState(""); // Mensagem de sucesso
+        const navigate = useNavigate();
+      
+        // Função para verificar se a senha atende aos requisitos
+        const isValidPassword = (password) => {
+          const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+          return regex.test(password);
+        };
+      
+        const handleLoginSuccess = (user) => {
+          // Usuário autenticado com sucesso
+          // Salve o login no LocalStorage
+          localStorage.setItem("loggedUser", JSON.stringify(user));
+      
+          // Exiba a mensagem de sucesso
+          setMessage("Usuário autenticado com sucesso.");
+      
+          // Redirecione para a página de dashboard após um breve atraso
+          setTimeout(() => {
+            navigate("/dashboard");
+          }, 1500); // Redireciona após 1,5 segundo
+        };
+      
+        const handleSubmit = (e) => {
+          e.preventDefault();
+      
+          // Verifique se o usuário existe no arquivo JSON
+          const user = usersData.usuarios.find((user) => user.email === email);
 
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("submit", { email, password });
-        navigate("/dashboard");
-
-
-      };
+          // Verifique se a senha atende aos requisitos
+          if (!isValidPassword(password)) {
+            setMessage("A senha deve ter no mínimo 6 digitos (incluindo 1 letra maiúscula, 1 letra minúscula e 1 número.");
+            
+            setTimeout(() => {
+                window.location.reload();
+                }, 5000); // Redireciona após 5 segundos
+            
+            return;
+          }
+      
+          if (!user || user.senha !== password) {
+            // Exiba uma mensagem de erro
+            setMessage("Acesso negado. Verifique dados de e-mail e senha e tente novamente.");
+                        
+            setTimeout(() => {
+                window.location.reload();
+                }, 2000); // Redireciona após 2 segundos
+            return;
+          }
+      
+          // Chame a função de sucesso de login
+          handleLoginSuccess(user);
+        };
 
     return (
         <div className="box-container">
@@ -76,6 +119,9 @@ const Login =() => {
                                         <button type="submit" className="btn">
                                         Entrar
                                         </button>
+                                    </div>
+                                    <div className="message">
+                                        {message}
                                     </div>
                                 </div>
                             </form>
