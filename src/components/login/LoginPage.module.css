@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+
+.boxContainer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.containerImage{
+    flex: 1;
+    opacity: 80%;
+
+}
+.containerImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.containerInputs{
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+
+.rightBox {
+    width: 400px;
+    height: 700px;
+
+}
+.rightBox p {
+    color: #374557;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+.logo img{
+width: 300px;
+height: 300px;
+margin-top: 50px;
+}
+
+.form {
+    width: 400px;
+}
+.containerDadosInputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputGroupText {
+    color:#A098AE;
+}
+
+#input::placeholder {
+    font-size: 0.9rem;
+    color: #A098AE;
+    border: none;
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 30px;
+    top: 12px;
+    color: #A098AE;
+    border: none;
+}
+
+.btnLogin {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border: none;
+    background-color: #4CBC9A;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.btnLogin:hover {
+    background-color: #4cbc9ad8;
+}
+
+@media only screen and (max-width: 768px) {
+    .boxArea {
+        margin: 0 10px;
+    }
+
+    .leftBox {
+        height: 100px;
+        overflow: hidden;
+    }
+
+    .rightBox {
+        padding: 20px;
+    }
+}
