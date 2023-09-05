@@ -13,21 +13,36 @@ p {
     font-size: 1.2rem;
 }
 
-.box-area {
-    width: 950px;
+.box-container {
+    height: 100vh;
+    overflow: hidden;
 }
 
 .left-box img {
     position: relative;
-    height: 90vh;
-    width: 500px;
+    width: 640px;
 
+}
+
+.logo img {
+    width: 200px;
+    height: 200px;
 }
 
 .right-box {
-    padding: 40px 60px 40px 70px;
+    width: 400px;
+    height: 700px;
+    padding-left: 350px;
+    padding-bottom: 140px;
 }
 
+.form {
+    width: 400px;
+}
+
+.input-group-text {
+    color:#A098AE;
+}
 
 #input::placeholder {
     font-size: 0.9rem;
@@ -66,7 +81,6 @@ p {
 .btn:hover {
     background-color: #04976b;
 }
-
 
 @media only screen and (max-width: 768px) {
     .box-area {
