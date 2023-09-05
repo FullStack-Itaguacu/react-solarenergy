@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
@@ -7,11 +8,15 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 const Login =() => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("submit", { email, password });
+        navigate("/dashboard");
+
+
       };
 
     return (
