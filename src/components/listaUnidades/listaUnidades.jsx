@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { Table, Button } from "react-bootstrap";
 
-export default function ListaUnidades() {
+export default function ListaUnidades({ mudarFormulario }) {
 
   const [data, setData] = useState([]);
 
@@ -20,9 +21,11 @@ export default function ListaUnidades() {
   useEffect(() => {
     fetchData();
   }, []);
-const editarUnidade = () => console.log("editarUnidade")
-const removerUnidade = () => console.log("removerUnidade")
-const adicionaUnidade = () => console.log("adicionaUnidade")
+
+  const editarUnidade = () => console.log("editarUnidade")
+
+  const removerUnidade = () => console.log("removerUnidade")
+
   return (
     <div>
       <Table className="my-4">
@@ -50,13 +53,17 @@ const adicionaUnidade = () => console.log("adicionaUnidade")
                 <Button variant="danger" onClick={() => removerUnidade(item.id)}>
                   Remover
                 </Button>
-              </td> 
+              </td>
             </tr>
           ))}
         </tbody>
       </Table>
       <br />
-      <Button onClick={() => adicionaUnidade()}>Nova Unidade</Button>
+      <Button onClick={() => mudarFormulario()}>Nova Unidade</Button>
     </div>
   );
+}
+
+ListaUnidades.propTypes = {
+  mudarFormulario: PropTypes.func.isRequired,
 };
