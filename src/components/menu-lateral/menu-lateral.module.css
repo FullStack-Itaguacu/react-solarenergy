@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500&family=Roboto:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.topBar {
+  background-color: #ffffff;
+  padding: 10px;
+  height: 108px;
+  display: flex;
+  align-items: center;
+}
+.topBar h1 {
+  font-size: 36px;
+  color: #000000fd;
+  margin-left: 350px;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+}
+.containerLogo{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: -100px;
+}
+.logoMenu{
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.leftSidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 345px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.active .btn p{
+  color: #ffffff;
+  font-size: 18px;
+}
+
+
+
+.leftMenu {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftMenu a {
+  text-decoration: none;
+  color: #353434a8;
+}
+
+.btn  {
+  display: flex;
+  justify-content: start;
+  font-size: 18px;
+  align-items: center;
+  padding: 10px;
+  width: 252px;
+  height: 64px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  color: #A098AE;
+}
+.btn:hover {
+  background-color: #FAFAFA;
+  border-radius: 20px;
+  width: 252px;
+  height: 64px;
+  border-radius: 10px;
+  color: #A098AE;
+  cursor: pointer;
+}
+
+.iconMenu{
+  margin-right: 10px;
+  height: 32px;
+  width: 32px;
+}
+
+.active {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+  width: 252px;
+  height: 64px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  background-color: #4CBC9A;
+  color: #ffffff;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: #FAFAFA;
+}
