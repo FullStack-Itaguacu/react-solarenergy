@@ -97,7 +97,7 @@ export const LancamentoGeracaoMensal = () => {
                 type="number"
                 name="kw"
                 value={total}
-                onChange={(e) => setTotal(e.target.value)}
+                onChange={(e) => setTotal(e.target.valueAsNumber)}
               />
             </div>
             <div className={styles.botao}>
