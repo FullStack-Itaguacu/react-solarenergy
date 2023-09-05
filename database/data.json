@@ -45,8 +45,26 @@
     {
       "id_unidade": "abc",
       "data": "2023-09",
-      "total": "56",
+      "total": 56,
       "id": "fT7wmgy"
+    },
+    {
+      "id_unidade": "abc",
+      "data": "2023-10",
+      "total": 100,
+      "id": "0HIdjnk"
+    },
+    {
+      "id_unidade": "abc",
+      "data": "2023-12",
+      "total": 150,
+      "id": "LBOiBdF"
+    },
+    {
+      "id_unidade": "abc",
+      "data": "2023-06",
+      "total": 250,
+      "id": "gtKX26d"
     }
   ]
 }
