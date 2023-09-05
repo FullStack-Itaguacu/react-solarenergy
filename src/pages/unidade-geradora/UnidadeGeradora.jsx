@@ -1,3 +1,4 @@
+import ListaUnidades from "../../components/listaUnidades/listaUnidades";
 import { CadastroUnidade } from "../../components/cadastroUnidade/Cadastro";
 import { useState } from "react";
 
@@ -20,8 +21,8 @@ export const UnidadeGeradora = () => {
         <CadastroUnidade mudarFormulario={mudarFormulario}/>
       ) : (
         <>
-          <h1>Lista de unidades</h1>
-          {/* Este codigo debe ser substituido pelo componente de lista de unidades  */}
+          <h3>Lista de unidades</h3>
+          <ListaUnidades />
         </>
       )}{" "}
     </>
