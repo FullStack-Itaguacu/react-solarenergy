@@ -1,17 +1,14 @@
 .formulario {
   display: flex;
-  margin-top: 110px;
-  width: 100%;
-  margin-left: 250px;
+  margin-top: 0px;
+  margin-left: 150px;
 }
 
 .formulario form {
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
+  padding: 5px;
   border-radius: 20px;
   background: var(--color-white, #fafafa);
 }
@@ -26,8 +23,6 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 100%;
-  height: 100%;
   padding: 10px;
   background: var(--color-white, #fafafa);
   margin-left: 0%;
