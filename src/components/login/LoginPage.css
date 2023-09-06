@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -70,6 +70,7 @@ body {
     width: 100%;
     height: 50px;
     margin-top: 20px;
+    padding:10px;
     border: none;
     background-color: #0bd196;
     color: #fff;
