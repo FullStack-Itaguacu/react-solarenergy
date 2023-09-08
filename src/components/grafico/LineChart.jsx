@@ -64,9 +64,6 @@ export const LineChart = () => {
 
   const dadosOrganizados = organizaData(somaLancamentos)
   const mesesFinais = ultimosMeses(dadosOrganizados)
-  console.log(somaLancamentos)
-  console.log(dadosOrganizados)
-  console.log(mesesFinais)
 
   // Criação do Gráfico
   ChartJS.register(
