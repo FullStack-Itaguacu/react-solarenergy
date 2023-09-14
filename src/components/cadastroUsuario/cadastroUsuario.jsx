@@ -5,11 +5,12 @@ import { PiEnvelopeLight } from "react-icons/pi";
 import usersData from "../../../database/data.json";
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./LoginPage.css";
+import "./cadastroUsuario.module.css";
 
-const Login = () => {
+const CadastrarUsuario = () => {
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
+        const [name, setName] = useState("");
         const [message, setMessage] = useState(""); // Mensagem de sucesso
         const navigate = useNavigate();
       
@@ -18,54 +19,52 @@ const Login = () => {
           const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
           return regex.test(password);
         };
-      
-        const handleLoginSuccess = (user) => {
-          // Usuário autenticado com sucesso
-          // Salve o login no LocalStorage
-          localStorage.setItem("loggedUser", JSON.stringify(user));
-      
-          // Exiba a mensagem de sucesso
-          setMessage("Usuário autenticado com sucesso.");
-      
-          // Redirecione para a página de dashboard após um breve atraso
-          setTimeout(() => {
-            navigate("/dashboard");
-          }, 1500); // Redireciona após 1,5 segundo
-        };
 
-        const cadastro = () => {
-            navigate("/cadastro_usuario");
-        }
+        // Função para verificar se o E-mail atende aos requisitos
+        const isValidEmail = (email) => {
+            const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+            return regex.test(email);
+          };
+      
+        const handleCdastroSuccess = (user) => {
+            setMessage("Usuário criado com sucesso.");
+      
+            // Redirecione para a página de login após um breve atraso
+            setTimeout(() => {
+                navigate("/login");
+            }, 1500); // Redireciona após 1,5 segundo
+        };
       
         const handleSubmit = (e) => {
-          e.preventDefault();
+            e.preventDefault();
       
-          // Verifique se o usuário existe no arquivo JSON
-          const user = usersData.usuarios.find((user) => user.email === email);
+            // Verifique se o usuário existe no arquivo JSON
+            const user = usersData.usuarios.find((user) => user.email === email);
 
-          // Verifique se a senha atende aos requisitos
-          if (!isValidPassword(password)) {
-            setMessage("A senha deve ter no mínimo 6 digitos (incluindo 1 letra maiúscula, 1 letra minúscula e 1 número.");
+            // Verifique se o email atende aos requisitos
+            if (!isValidEmail(email)) {
+                setMessage("O email deve ser um email válido.");
             
-            setTimeout(() => {
-                window.location.reload();
+                setTimeout(() => {
+                    window.location.reload();
                 }, 5000); // Redireciona após 5 segundos
             
-            return;
-          }
+                return;
+            }
+
+            // Verifique se a senha atende aos requisitos
+            if (!isValidPassword(password)) {
+                setMessage("A senha deve ter no mínimo 6 digitos (incluindo 1 letra maiúscula, 1 letra minúscula e 1 número.");
+            
+                setTimeout(() => {
+                    window.location.reload();
+                }, 5000); // Redireciona após 5 segundos
+            
+                return;
+            }
       
-          if (!user || user.senha !== password) {
-            // Exiba uma mensagem de erro
-            setMessage("Acesso negado. Verifique dados de e-mail e senha e tente novamente.");
-                        
-            setTimeout(() => {
-                window.location.reload();
-                }, 2000); // Redireciona após 2 segundos
-            return;
-          }
-      
-          // Chame a função de sucesso de login
-          handleLoginSuccess(user);
+            // Chame a função de sucesso de cadastro
+            handleCdastroSuccess(user);
         };
 
     return (
@@ -90,6 +89,24 @@ const Login = () => {
                         </div>
                         <div className="col-md-12">
                             <form className="form" onSubmit={handleSubmit}>
+                                <div className="mb-3">
+                                    <div className="input-group">
+                                        <span className="input-group-text">
+                                            <PiEnvelopeLight  />
+                                        </span>
+                                        <input
+                                            id="name"
+                                            type="text"
+                                            name="name"
+                                            placeholder="Nome completo"
+                                            className="form-control"
+                                            required
+                                            value={name}
+                                            //onChange={(e) = setName(e.target.value)}
+                                             
+                                        />
+                                    </div>
+                                </div>
                                 <div className="mb-3">
                                     <div className="input-group">
                                         <span className="input-group-text">
@@ -123,16 +140,9 @@ const Login = () => {
                                     </div>
                                     <div className="actions">
                                         <button type="submit" className="login-btn">
-                                            Entrar
-                                        </button>
-                                    </div>
-
-                                    <div className="actions">
-                                        <button type="button" className="login-btn" onClick={cadastro}>
                                             Cadastrar
                                         </button>
                                     </div>
-
                                     <div className="message">
                                         {message}
                                     </div>
@@ -148,4 +158,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default CadastrarUsuario;

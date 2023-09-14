@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+.saudacao {
+    color: #374557;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+.box-container {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.left-box img {
+    position: relative;
+    width: 640px;
+
+}
+
+.logo img {
+    width: 200px;
+    height: 200px;
+}
+
+.right-box {
+    width: 400px;
+    height: 700px;
+    padding-left: 350px;
+    padding-bottom: 140px;
+}
+
+.form {
+    width: 400px;
+}
+
+.input-group-text {
+    color: #A098AE;
+}
+
+#input::placeholder {
+    font-size: 0.9rem;
+    color: #A098AE;
+    border: none;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.input-icon {
+    position: absolute;
+    left: 30px;
+    top: 12px;
+    color: #A098AE;
+    border: none;
+}
+
+.login-btn {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    padding:10px;
+    border: none;
+    background-color: #0bd196;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+    background-color: #04976b;
+}
+
+.login-btn:focus {
+    outline: none;
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.message {
+    color: #e90707;
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .box-area {
+        margin: 0 10px;
+    }
+
+    .left-box {
+        height: 100px;
+        overflow: hidden;
+    }
+
+    .right-box {
+        padding: 20px;
+    }
+}
