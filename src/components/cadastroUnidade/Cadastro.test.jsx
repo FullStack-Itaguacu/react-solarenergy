@@ -1,13 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import { CadastroUnidade } from "./Cadastro";
+const mudarFormulario = jest.fn();
 
 describe("cadastro unidade", () => {
   test("Deveria a página apresentar um texto Cadastro de Unidade Geradora", () => {
-    render(<CadastroUnidade />);
+    render(<CadastroUnidade mudarFormulario={mudarFormulario} />);
     const texto = screen.getByText(/Cadastro de Unidade Geradora/i);
     expect(texto).toBeInTheDocument();
   });
-  test.todo("A página não deve apresentar o texto Listagem de Unidades");
+  test("A página não deve apresentar o texto Listagem de Unidades", () => {
+    render(<CadastroUnidade mudarFormulario={mudarFormulario} />);
+    const texto = screen.queryByText("Listagem de Unidade");
+    expect(texto).not.toBeInTheDocument();
+  });
   test.todo(
     "Deveria a página apresentar um objeto contendo: [type, label, name, placeholder, inputClassName]"
   );
