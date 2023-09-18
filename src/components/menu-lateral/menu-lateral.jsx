@@ -41,9 +41,12 @@ export const MenuLateral = ({ children }) => {
           <div className={styles.content}>
             <aside className={styles.leftSidebar}>
               <div className={styles.leftContainerMenu}>
-                <div className={styles.containerLogo}>
-                  <img className={styles.logoMenu} src={logoImage} alt="" /></div>
-                <div className={styles.leftMenu}>
+                <Link to="/dashboard">
+                  <div className={styles.containerLogo}>
+                    <img className={styles.logoMenu} src={logoImage} alt="" />
+                  </div>
+                </Link>
+                  <div className={styles.leftMenu}>
                   <Link to="/dashboard">
                     <div
                       className={`${pathname === '/dashboard'

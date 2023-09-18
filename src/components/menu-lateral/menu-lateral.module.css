@@ -56,9 +56,10 @@
   box-sizing: border-box;
 }
 
-.active .btn p{
+.active .btn .pg{
   color: #ffffff;
   font-size: 18px;
+  align-content: center;
 }
 
 
