@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Table, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function ListaUnidades({ mudarFormulario }) {
 
@@ -24,11 +25,31 @@ export default function ListaUnidades({ mudarFormulario }) {
 
   const editarUnidade = () => console.log("editarUnidade")
 
-  const removerUnidade = () => console.log("removerUnidade")
+  const removerUnidade = (id) => {
+      fetch("http://localhost:3000/unidades/" + id, {
+        method: "DELETE",
+      });
+
+      //window.location.reload(false);
+      alert(`Unidade com o ID ${id} removido com sucesso.`);
+      fetchData();
+      }
+
+
 
   return (
     <div>
-      <Table className="my-4">
+      {
+        data.length === 0
+        ?
+        <>
+          <br />
+          <h5>Nenhuma unidade cadastrada</h5>
+          <h5>Use o botão abaixo para efetuar o cadastro</h5>
+        </>
+        :
+        <>
+        <Table className="my-4">
         <tbody>
           <tr>
             <th>ID</th>
@@ -45,9 +66,11 @@ export default function ListaUnidades({ mudarFormulario }) {
               <td>{item.marca}</td>
               <td>{item.modelo}</td>
               <td>
-                <Button variant="success" onClick={() => editarUnidade(item.id)}>
-                  Editar
-                </Button>
+                <Link to={`http://localhost:3000/unidades/${item.id}`}>
+                  <Button variant="success" onClick={() => editarUnidade(item.id)}>
+                    Editar
+                  </Button>
+                </Link>
               </td>
               <td>
                 <Button variant="danger" onClick={() => removerUnidade(item.id)}>
@@ -59,6 +82,8 @@ export default function ListaUnidades({ mudarFormulario }) {
         </tbody>
       </Table>
       <br />
+      </>
+      }
       <Button onClick={() => mudarFormulario()}>Nova Unidade</Button>
     </div>
   );
